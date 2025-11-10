@@ -9,9 +9,19 @@ interface PhoneItemProps {
 }
 
 export function PhoneItem({ phone }: PhoneItemProps) {
-  const handleCopyPhone = () => {
-    navigator.clipboard.writeText(phone);
-    toast.success("Telefone copiado!");
+  const handleCopyPhone = async () => {
+    if (!navigator.clipboard) {
+      toast.error("A cópia não é suportada neste navegador/contexto.");
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(phone);
+      toast.success("Telefone copiado!");
+    } catch (error) {
+      console.error("Failed to copy phone number:", error);
+      toast.error("Não foi possível copiar. Copie manualmente.");
+    }
   };
 
   return (

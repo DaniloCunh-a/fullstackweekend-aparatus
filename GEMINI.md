@@ -1,0 +1,1 @@
+Use as regras que estão em @.cursor/rules/project.mdc @.cursor/rules/typescript.mdc

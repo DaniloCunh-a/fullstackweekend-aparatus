@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "context7": {
+      "httpUrl": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "ctx7sk-1e07bdb8-f237-46a2-8dc7-2905a9722cba",
+        "Accept": "application/json, text/event-stream"
+      }
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+         "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+       "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      }
+    },
+    "Figma Dev Mode MCP": {
+       "type": "sse",
+       "url": "http://127.0.0.1:3845/sse"
+    }
+  }
+}
